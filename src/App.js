@@ -831,7 +831,7 @@ function BillingPage({ devices, totalKwh, rate, setRate, history30d }){
 function SettingsPage({ devices, rate, setRate }){
   const [notifications, setNotifications] = useState(true);
   const [autoOff, setAutoOff] = useState(false);
-  const [unit, setUnit] = useState("kWh");
+  const [, setUnit] = useState("kWh");
   return (
     <div className="page-enter">
       <div style={{fontSize:16,fontWeight:700,marginBottom:20}}>Settings & Preferences</div>
@@ -907,7 +907,7 @@ export default function EnergiSense() {
   const [history24h] = useState(()=>generateHistory(24,2.5));
   const [history7d]  = useState(()=>generateHistory(7, 18).map((h,i)=>{const days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];return{...h,label:days[i%7]}}));
   const [history30d] = useState(()=>generateHistory(30,15).map((h,i)=>{const d=new Date(Date.now()-(29-i)*86400000);return{...h,label:`${d.getMonth()+1}/${d.getDate()}`}}));
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
 
   // Simulation engine — ticks every 5s
   useEffect(()=>{
